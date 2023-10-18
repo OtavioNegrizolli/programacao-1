@@ -1,0 +1,13 @@
+{
+  "name": "aula-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node main.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
