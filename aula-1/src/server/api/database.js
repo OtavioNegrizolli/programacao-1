@@ -1,19 +1,19 @@
-import { } from ''
 
 const userTable = new Map();
 
-userTable.set('otavio', {
-    pwd: '$2b$10$WDLTHuh5xBWV2AQz7zC8aOZ.V7wzz/f.YfVdwuLhvxnaF..ALJU7y'
+userTable.set('user@email.com', {
+    // pwd: sopa
+    pwd: '$2b$10$M/lYcbwsq3y3QW0qgTM/Bu3E4GRIJ1qE2Lgtlhpxf7RK3CHsG8IVW'
 });
 
 
 export default class Db {
-    static getUser(userName) {
-        const user = userTable.get(userName);
+    static getUser(login) {
+        const user = userTable.get(login);
         if ( user != undefined)
             return {
                 ...user,
-                name: userName
+                login: login
             };
         return null;
     }

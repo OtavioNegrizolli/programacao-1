@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C1 - Login</title>
     <link rel="stylesheet" href="/assets/css/form.css">
+    <link rel="stylesheet" href="/assets/css/modal.css">
 </head>
 <body>
     <form>
@@ -18,5 +19,30 @@
         </label>
         <button type="submit">Login</button>
     </form>
+    <script src="/assets/js/modal.js"></script>
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // pega os dados
+            const fd = new FormData(form);
+            const somebody = {};    
+            fd.forEach((value, key) => somebody[key] = value);
+            fetch(`${location.origin}/api/login`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(somebody)
+            }).then( res => {                
+                console.warn(res);
+            }).catch( ({ status, body }) => {
+                showModal({
+                    title: 'Falha ao logar',
+                    message: body.error
+                })
+            });
+        });
+    </script>
 </body>
 </html>

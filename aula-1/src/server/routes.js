@@ -13,10 +13,10 @@ const l = path.resolve(
 
 const baseRoutes = Router();
 const publicFiles = express.static(l);
-
+baseRoutes.use(RequestLoggerMiddleware);
 baseRoutes.use('', publicFiles);
-baseRoutes.use('/api', RequestLoggerMiddleware, apiRouter);
-baseRoutes.use()
+baseRoutes.use('/api', apiRouter);
+// baseRoutes.use()
 
 
 const MainRouter = baseRoutes;
