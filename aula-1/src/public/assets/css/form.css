@@ -1,0 +1,113 @@
+form {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    gap: 40px;
+    padding: 1rem 2rem 2rem 2rem;
+    border-radius: 3px;
+}
+
+form section,
+form .row {
+    display: flex;
+    width: 100%;
+    padding: .8em 1.2em;
+    box-shadow: 0 2px 6px 5px rgba( 0, 0, 0,.3);
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+section.actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.actions button {
+    width: 12em;
+    font-size: 1.2em;
+    padding: .2em;
+    appearance: none;
+    cursor: pointer;
+    transition: background-color ease-in-out .8s;
+}
+
+button[type=submit] {
+    background-color: green;
+    color: #fff;
+    border: 2px solid green;
+}
+
+button[type=reset] {
+    background-color: transparent;
+    color: red;
+    border: 2px solid red;
+}
+
+button[type=reset]:hover {
+    background-color: #c00;
+    color: #fff;
+    border-color: #c00;
+}
+
+button:disabled {
+    background-color: #ccc;
+    border: 2px solid #aaa;
+    cursor: not-allowed;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 20px
+}
+
+.row button {
+    font-size: 1.2rem;
+    padding: 10px;
+    appearance: none;
+    background-color: #5af;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    /* transition: background ease-in-out .8s; */
+    align-self: flex-end;
+    border-radius: 4px;
+}
+
+label {
+    font-size: 1.5rem;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label input {
+    padding: 8px 11px 8px 8px;
+    font-size: 1.2rem;
+    border-radius: 3px;
+    outline: none;
+    box-shadow: inset 0px 0px 4px rgba( 0, 0, 0,.5);
+    border: 1px solid #555;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+body > form {
+    transform: translateY(-50%);
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, .3);
+}
+
+form > button {
+    height: 2.5rem;
+    font-size: 1.2rem;
+}

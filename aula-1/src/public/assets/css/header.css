@@ -1,0 +1,24 @@
+header {
+    grid-area: header;
+    background-color: #fff;
+    box-shadow: 1px 3px 6px 5px rgba( 0, 0, 0,.3);
+    z-index: 100;
+    padding: 0 30px;
+    background-color: #05a;
+    color: #fff;
+}
+
+header a { 
+    display: flex;
+    height: 98%;
+    gap: .8em;
+}
+header img {
+    width: auto;
+    color: #fff;
+}
+
+header h1 {
+    line-height: 1.8vh;
+    font-size: 3.8vh;
+}

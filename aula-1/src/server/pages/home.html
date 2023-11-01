@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SisBi - Emprestimo</title>
+    <link rel="stylesheet" href="~/assets/css/form.css">
+    <link rel="stylesheet" href="~/assets/css/header.css">
+    <link rel="stylesheet" href="~/assets/css/table.css">
+    <link rel="stylesheet" href="~/assets/css/nav.css">
+    <link rel="stylesheet" href="~/assets/css/alert.css">
+    <link rel="stylesheet" href="~/assets/css/toastr.css">
+    
+    <style>
+        *, button {
+            font-size: 18px;
+            box-sizing: border-box;
+            font-size: inherit;
+        }
+
+        body {
+            display: grid;
+            width: 100vw;
+            height: 100vh;
+            grid-template-columns: 20% auto;
+            grid-template-rows: 6% auto;
+            grid-template-areas: "header header" 
+                                 "sidebar main";
+            padding: 0;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        button {
+            border-radius: 4px;
+        }
+
+        main {
+            grid-area: main;
+            --x-margin-main: 40px;
+            display: flex;
+            flex: 1;
+            margin: 0;
+            margin-left: var(--x-margin-main);
+            margin-right: var(--x-margin-main);
+            background-color: #0000;
+            align-items: start;
+
+            gap: 3rem;
+            padding-top: 50px;
+            flex-direction: column;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <a>
+            <img src="~/open-book-svgrepo-com.svg" alt="">
+            <h1>SisBi</h1>
+        </a>
+    </header>
+    <nav>
+        <a class="active">Empréstimo</a>
+        <a>Renovação</a>
+        <a>Reserva</a>
+    </nav>
+    <main>
+        <form id="search">
+                <div class="row">
+                <label for="search">
+                    Informações para busca
+                    <input type="text" name="search" id="search" placeholder="Ex.: Nome do autor, titulo do livro ou assunto..."/>
+                </label>
+                <button type="submit">Buscar</button>
+            </div>
+        </form>
+        <form>
+            <section>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Autor(s)</th>
+                            <th scope="col">Título</th>
+                            <th scope="col">Editora</th>
+                            <th scope="col">Selecione</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Machado de Assis</td>
+                            <td>Dom Casmurro</td>
+                            <td>LeYa</td>
+                            <td>
+                                <input type="radio" name="book" id="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Earl Sowkowski</td>
+                            <td>Calculo e Algebra Linear</td>
+                            <td>LeYa</td>
+                            <td>
+                                <input type="radio" name="book" id="">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="actions">
+                <button type="submit">Efetuar Reserva</button>
+                <button type="reset">Cancelar</button>
+            </section>
+        </form>
+    </main>
+  
+    <script src="~/assets/js/modal.js"></script>
+    <script src="~/assets/js/toastr.js"></script>
+    <script> 
+        function search(e) {
+            e.preventDefault();
+            toast({ message: 'its a message', title: 'The title'});
+        }
+
+        function register() {
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach( n => {
+                n.onclick = (e) => {
+                    navLinks.forEach( n => n.classList.remove('active'));
+                    e.target.classList.add('active');
+                }
+            });
+            const searchForm = document.querySelector('#search');
+            searchForm.addEventListener('submit', search);
+        }
+        document.onreadystatechange = console.log;
+        window.addEventListener('load', () => {
+            register();
+        });
+    </script>
+    
+</body>
+
+</html>

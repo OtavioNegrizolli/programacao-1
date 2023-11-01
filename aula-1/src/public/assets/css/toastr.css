@@ -1,0 +1,35 @@
+.toastr {
+    position: fixed;
+    right: -20vw;
+    top: 10px;
+    z-index: 999;
+    display: flex;
+    background-color: #090d;
+    width: 20vw;
+    aspect-ratio: 40/6;
+    flex-wrap: wrap;
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px 0 0 5px;
+    text-shadow: 0 0 5px #000;
+
+    transition: transform ease-in 1s;
+}
+.toastr.toast {
+    transform: translateX(-100%);
+}
+.toastr.toasted {
+    transform: translateX(100%);
+}
+.toastr h1 {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.toastr p {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}

@@ -1,0 +1,42 @@
+nav {            
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 30px 0 0 0;
+    box-shadow: 1px 12px 6px 5px rgba(0, 0, 0,.3);
+    font-size: 20px;
+    color: #fff;
+    background-color: #08f;
+}
+
+nav a {
+    display: flex;
+    width: 100%;
+    padding: 10px 0 10px 25px;
+    cursor: pointer;
+    text-decoration: underline 1px;
+}
+
+nav a::before {
+    content: 'Ir para ->';
+    display: none;
+    font-size: 15px;
+    color: #555;
+    margin-right: 5px;
+}
+
+nav a:hover:not(.active)::before {
+    display: inline;
+}
+
+nav a:hover, 
+nav a.active {
+    box-shadow: 0 4px 3px 3px rgba(0, 0, 0,.2);
+    width: calc(100% + 15px);
+    font-size: 23px;
+    line-height: 23px;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+}
